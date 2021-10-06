@@ -1,7 +1,15 @@
-'use strict';
-import dc from 'damage-calc';
-import crypto from 'crypto';
-const root = document.getElementById('root');
-root.innerHTML = '<p>攻撃力 100, 防御 50, 防御貫通 30 のダメージは、'
-  + dc.effectiveDamage(100, 50, 30) + '</p><p>'
-  + crypto.randomBytes(8).toString('hex') + '</p>';
+"use strict";
+import $ from "jquery";
+const block = $("#block");
+const scailingButton = $("#scaling-button");
+const moving = $("#moving-button");
+
+scailingButton.click(() => {
+  block.animate({ width: "200pt", hright: "200pt" }, 2000);
+  block.animate({ width: "100pt", hright: "100pt" }, 2000);
+});
+
+moving.click(() => {
+  block.animate({ marginLeft: "500px" }, 1000);
+  block.animate({ marginLeft: "20px" }, 1000);
+});
